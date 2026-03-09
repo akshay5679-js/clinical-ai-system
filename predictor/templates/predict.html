@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Heart Disease Risk Prediction</h1>
+
+<p>Enter patient medical details to predict heart disease risk.</p>
+
+<form method="POST">
+{% csrf_token %}
+
+<h3>Patient Information</h3>
+
+Age: <input type="number" name="age" required><br><br>
+
+Sex: <select name="sex">
+
+<option value="1">Male</option>
+<option value="0">Female</option>
+</select>
+<br><br>
+
+Chest Pain Type: <select name="cp">
+
+<option value="0">Typical Angina</option>
+<option value="1">Atypical Angina</option>
+<option value="2">Non-anginal Pain</option>
+<option value="3">Asymptomatic</option>
+</select>
+<br><br>
+
+Resting Blood Pressure: <input type="number" name="trestbps"><br><br>
+
+Cholesterol: <input type="number" name="chol"><br><br>
+
+Fasting Blood Sugar: <select name="fbs">
+
+<option value="0">Less than 120</option>
+<option value="1">Greater than 120</option>
+</select>
+<br><br>
+
+Rest ECG: <select name="restecg">
+
+<option value="0">Normal</option>
+<option value="1">ST-T abnormality</option>
+<option value="2">Left ventricular hypertrophy</option>
+</select>
+<br><br>
+
+Max Heart Rate: <input type="number" name="thalach"><br><br>
+
+Exercise Induced Angina: <select name="exang">
+
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+<br><br>
+
+Oldpeak: <input type="text" name="oldpeak"><br><br>
+
+Slope: <select name="slope">
+
+<option value="0">Upsloping</option>
+<option value="1">Flat</option>
+<option value="2">Downsloping</option>
+</select>
+<br><br>
+
+CA (number of vessels): <input type="number" name="ca"><br><br>
+
+Thal: <select name="thal">
+
+<option value="1">Normal</option>
+<option value="2">Fixed defect</option>
+<option value="3">Reversible defect</option>
+</select>
+
+<br><br>
+
+<button type="submit">Predict Risk</button>
+
+</form>
+
+<br>
+
+{% if prediction %}
+
+<h2>Prediction Result</h2>
+
+<p><b>{{ prediction }}</b></p>
+
+{% endif %}
+
+{% endblock %}

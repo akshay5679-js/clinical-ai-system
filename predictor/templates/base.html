@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AI Clinical Decision Support System</title>
+
+```
+<style>
+    body{
+        font-family: Arial;
+        margin:0;
+        background:#f5f7fa;
+    }
+
+    nav{
+        background:#0d6efd;
+        padding:15px;
+    }
+
+    nav a{
+        color:white;
+        margin-right:20px;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    nav a:hover{
+        text-decoration:underline;
+    }
+
+    .container{
+        padding:30px;
+    }
+
+    h1{
+        color:#0d6efd;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="/">Home</a> <a href="/predict">Prediction</a> <a href="/summarize">Report Summarization</a> <a href="/ask">Medical Q&A</a> <a href="/report">Report Analise</a> <a href="/about">About</a>
+
+</nav>
+
+<div class="container">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+<div id="chatbot-icon">
+    <a href="/chat">💬</a>
+</div>
+
+<style>
+#chatbot-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #007bff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#chatbot-icon a {
+    color: white;
+    text-decoration: none;
+}
+</style>
+
+</body>
+</html>

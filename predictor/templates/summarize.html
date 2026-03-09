@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Medical Report Summarization</h1>
+
+<p>Paste a medical report and generate a short summary.</p>
+
+<form method="POST">
+{% csrf_token %}
+
+<textarea name="report" rows="10" cols="80"
+placeholder="Paste medical report here..."></textarea>
+
+<br><br>
+
+<button type="submit">Summarize Report</button>
+
+</form>
+
+<br>
+
+{% if summary %}
+
+<h2>Summary</h2>
+
+<p>{{ summary }}</p>
+
+{% endif %}
+
+{% endblock %}

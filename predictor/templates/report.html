@@ -1,0 +1,12 @@
+<h2>Upload Medical Report</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="report">
+    <button type="submit">Analyze Report</button>
+</form>
+
+{% if result %}
+<h3>AI Analysis</h3>
+<p>{{ result }}</p>
+{% endif %}
